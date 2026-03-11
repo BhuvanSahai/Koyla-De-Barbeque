@@ -1,12 +1,13 @@
 import React from 'react';
 import './About.css';
+import aboutImg from '../assets/about_bbq_1773130757705.png';
 
 const About = () => {
     return (
         <section className="section about" id="about">
             <div className="container about-grid">
                 <div className="about-image">
-                    <img src="/src/assets/about_bbq_1773130757705.png" alt="Sizzling BBQ" />
+                    <img src={aboutImg} alt="Sizzling BBQ" />
                     <div className="image-accent"></div>
                 </div>
                 <div className="about-content">

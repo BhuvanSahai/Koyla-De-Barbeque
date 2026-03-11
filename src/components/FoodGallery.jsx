@@ -1,13 +1,19 @@
 import React from 'react';
 import './FoodGallery.css';
+import heroBg from '../assets/hero_bg_1773130739110.png';
+import aboutImg from '../assets/about_bbq_1773130757705.png';
+import tandooriImg from '../assets/tandoori_chicken_1773130774500.png';
+import banjaraImg from '../assets/banjara_kebab_1773130850999.png';
+import biryaniImg from '../assets/biryani_1773130868327.png';
+import lollipopImg from '../assets/chicken_lollipop_1773130884297.png';
 
 const images = [
-    '/src/assets/hero_bg_1773130739110.png',
-    '/src/assets/about_bbq_1773130757705.png',
-    '/src/assets/tandoori_chicken_1773130774500.png',
-    '/src/assets/banjara_kebab_1773130850999.png',
-    '/src/assets/biryani_1773130868327.png',
-    '/src/assets/chicken_lollipop_1773130884297.png'
+    heroBg,
+    aboutImg,
+    tandooriImg,
+    banjaraImg,
+    biryaniImg,
+    lollipopImg
 ];
 
 const FoodGallery = () => {

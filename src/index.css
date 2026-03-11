@@ -90,6 +90,16 @@ button {
   padding: 5rem 0;
 }
 
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
 .text-center {
   text-align: center;
 }

@@ -40,14 +40,15 @@
 }
 
 .hero-title {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     line-height: 1.1;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    color: #F8F5F2;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    color: var(--text-secondary);
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+    color: #e0e0e0;
     max-width: 700px;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
@@ -92,12 +93,12 @@
 .info-card h3 {
     font-family: var(--font-body);
     font-size: 1.1rem;
-    color: var(--text-primary);
+    color: #F8F5F2;
     margin-bottom: 0.2rem;
 }
 
 .info-card p {
-    color: var(--text-secondary);
+    color: #e0e0e0;
     font-size: 0.9rem;
 }
 

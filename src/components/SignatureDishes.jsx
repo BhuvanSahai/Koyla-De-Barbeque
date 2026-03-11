@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 import './SignatureDishes.css';
+import tandooriImg from '../assets/tandoori_chicken_1773130774500.png';
+import banjaraImg from '../assets/banjara_kebab_1773130850999.png';
+import biryaniImg from '../assets/biryani_1773130868327.png';
+import lollipopImg from '../assets/chicken_lollipop_1773130884297.png';
+import paneerImg from '../assets/paneer_tikka.png';
+import muttonImg from '../assets/mutton_curry.png';
+import dalImg from '../assets/dal_makhani.png';
+import naanImg from '../assets/garlic_naan.png';
 
 const fullMenu = [
     // Starters
-    { category: 'Starters', name: 'Tandoori Chicken', description: 'Tandoor cooked chicken with spices', price: 'Half ₹195 / Full ₹385', image: '/src/assets/tandoori_chicken_1773130774500.png' },
-    { category: 'Starters', name: 'Chicken Tikka', description: 'All time favourite delicacy', price: '₹235', image: '/src/assets/tandoori_chicken_1773130774500.png' },
-    { category: 'Starters', name: 'Chicken Banjara Kebab', description: 'Tender chicken pieces with a unique herbaceous marinade.', price: '₹320', image: '/src/assets/banjara_kebab_1773130850999.png' },
-    { category: 'Starters', name: 'Chicken Lollipop', description: 'Crispy fried chicken wings glazed with spicy Schezwan sauce.', price: '₹240', image: '/src/assets/chicken_lollipop_1773130884297.png' },
-    { category: 'Starters', name: 'Paneer Tikka', description: 'Cubes of cottage cheese marinated in spiced yogurt and grilled.', price: '₹220', image: '/src/assets/paneer_tikka.png' },
-    { category: 'Starters', name: 'Mutton Seekh Kebab', description: 'Minced mutton with roasted spices, grilled on skewers.', price: '₹360', image: '/src/assets/banjara_kebab_1773130850999.png' },
+    { category: 'Starters', name: 'Tandoori Chicken', description: 'Tandoor cooked chicken with spices', price: 'Half ₹195 / Full ₹385', image: tandooriImg },
+    { category: 'Starters', name: 'Chicken Tikka', description: 'All time favourite delicacy', price: '₹235', image: tandooriImg },
+    { category: 'Starters', name: 'Chicken Banjara Kebab', description: 'Tender chicken pieces with a unique herbaceous marinade.', price: '₹320', image: banjaraImg },
+    { category: 'Starters', name: 'Chicken Lollipop', description: 'Crispy fried chicken wings glazed with spicy Schezwan sauce.', price: '₹240', image: lollipopImg },
+    { category: 'Starters', name: 'Paneer Tikka', description: 'Cubes of cottage cheese marinated in spiced yogurt and grilled.', price: '₹220', image: paneerImg },
+    { category: 'Starters', name: 'Mutton Seekh Kebab', description: 'Minced mutton with roasted spices, grilled on skewers.', price: '₹360', image: banjaraImg },
 
     // Main Course
-    { category: 'Main Course', name: 'Hyderabadi Dum Biryani', description: 'Aromatic basmati rice cooked with succulent chicken and spices.', price: '₹340', image: '/src/assets/biryani_1773130868327.png' },
-    { category: 'Main Course', name: 'Mutton Rogan Josh', description: 'Classic aromatic mutton curry from Kashmir.', price: '₹420', image: '/src/assets/mutton_curry.png' },
-    { category: 'Main Course', name: 'Dal Maharani', description: 'Black lentils cooked overnight with cream and butter.', price: '₹185', image: '/src/assets/dal_makhani.png' },
-    { category: 'Main Course', name: 'Butter Chicken', description: 'Chicken tikka cooked in a smooth buttery and creamy tomato gravy.', price: '₹360', image: '/src/assets/mutton_curry.png' },
-    { category: 'Main Course', name: 'Afghani Chicken', description: 'Creamy and mild chicken roast flavored with cashew paste.', price: '₹300', image: '/src/assets/chicken_lollipop_1773130884297.png' },
+    { category: 'Main Course', name: 'Hyderabadi Dum Biryani', description: 'Aromatic basmati rice cooked with succulent chicken and spices.', price: '₹340', image: biryaniImg },
+    { category: 'Main Course', name: 'Mutton Rogan Josh', description: 'Classic aromatic mutton curry from Kashmir.', price: '₹420', image: muttonImg },
+    { category: 'Main Course', name: 'Dal Maharani', description: 'Black lentils cooked overnight with cream and butter.', price: '₹185', image: dalImg },
+    { category: 'Main Course', name: 'Butter Chicken', description: 'Chicken tikka cooked in a smooth buttery and creamy tomato gravy.', price: '₹360', image: muttonImg },
+    { category: 'Main Course', name: 'Afghani Chicken', description: 'Creamy and mild chicken roast flavored with cashew paste.', price: '₹300', image: lollipopImg },
 
     // Breads
-    { category: 'Breads', name: 'Garlic Naan', description: 'Tandoor baked flatbread topped with minced garlic and butter.', price: '₹60', image: '/src/assets/garlic_naan.png' },
-    { category: 'Breads', name: 'Butter Naan', description: 'Soft and fluffy tandoori bread brushed with butter.', price: '₹50', image: '/src/assets/garlic_naan.png' },
-    { category: 'Breads', name: 'Tandoori Roti', description: 'Whole wheat bread baked in a clay oven.', price: '₹30', image: '/src/assets/biryani_1773130868327.png' }
+    { category: 'Breads', name: 'Garlic Naan', description: 'Tandoor baked flatbread topped with minced garlic and butter.', price: '₹60', image: naanImg },
+    { category: 'Breads', name: 'Butter Naan', description: 'Soft and fluffy tandoori bread brushed with butter.', price: '₹50', image: naanImg },
+    { category: 'Breads', name: 'Tandoori Roti', description: 'Whole wheat bread baked in a clay oven.', price: '₹30', image: biryaniImg }
 ];
 
 const SignatureDishes = () => {
