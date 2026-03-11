@@ -128,6 +128,18 @@
 }
 
 @media (max-width: 768px) {
+    .cta-banner {
+        padding: 3rem 0;
+    }
+
+    .cta-banner h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-grid {
+        gap: 1.5rem;
+    }
+
     .cta-actions {
         flex-direction: column;
         align-items: center;

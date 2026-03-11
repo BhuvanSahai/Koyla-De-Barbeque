@@ -46,3 +46,18 @@
     color: var(--text-secondary);
     font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .stars {
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-content {
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+    }
+}
