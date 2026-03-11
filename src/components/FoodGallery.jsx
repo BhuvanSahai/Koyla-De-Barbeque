@@ -1,0 +1,37 @@
+import React from 'react';
+import './FoodGallery.css';
+
+const images = [
+    '/src/assets/hero_bg_1773130739110.png',
+    '/src/assets/about_bbq_1773130757705.png',
+    '/src/assets/tandoori_chicken_1773130774500.png',
+    '/src/assets/banjara_kebab_1773130850999.png',
+    '/src/assets/biryani_1773130868327.png',
+    '/src/assets/chicken_lollipop_1773130884297.png'
+];
+
+const FoodGallery = () => {
+    return (
+        <section className="section" id="gallery">
+            <div className="container">
+                <div className="text-center mb-4">
+                    <h2 className="section-title">Our <span className="accent-color">Food Gallery</span></h2>
+                    <p className="section-subtitle">A glimpse into our smoky BBQ world</p>
+                </div>
+
+                <div className="gallery-grid">
+                    {images.map((img, index) => (
+                        <div className="gallery-item" key={index}>
+                            <img src={img} alt={`Gallery ${index}`} />
+                            <div className="gallery-overlay">
+                                <span>View Large</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default FoodGallery;

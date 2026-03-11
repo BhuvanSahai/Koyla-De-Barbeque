@@ -1,0 +1,134 @@
+:root {
+  /* Koyla De Barbeque Dark Palette (Default) */
+  --charcoal-black: #1B1B1B;
+  --smoky-red: #C0392B;
+  --bbq-orange: #E67E22;
+  --warm-cream: #F8F5F2;
+  --dark-grey: #2C2C2C;
+  --text-primary: #F8F5F2;
+  --text-secondary: #aaaaaa;
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body.light-mode {
+  /* Light Palette Overrides */
+  --charcoal-black: #F8F5F2;
+  /* Background becomes cream */
+  --smoky-red: #D35400;
+  /* Slightly brighter for contrast */
+  --bbq-orange: #E67E22;
+  --warm-cream: #1B1B1B;
+  /* Text becomes dark */
+  --dark-grey: #e0e0e0;
+  --text-primary: #1B1B1B;
+  --text-secondary: #555555;
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--charcoal-black);
+  color: var(--text-primary);
+  line-height: as;
+  /* Typo from default? No, just 1.6 */
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.4s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--smoky-red);
+  color: var(--warm-cream);
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #a02d22;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--bbq-orange);
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 2px solid var(--bbq-orange);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bbq-orange);
+  color: var(--charcoal-black);
+}
+
+/* High contrast accent */
+.accent-color {
+  color: var(--bbq-orange);
+}

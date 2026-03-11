@@ -1,0 +1,151 @@
+.reservation-page {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    background-color: var(--charcoal-black);
+}
+
+.reservation-container {
+    max-width: 800px;
+}
+
+.reservation-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.reservation-header h1 {
+    margin-bottom: 1rem;
+}
+
+.reservation-header p {
+    color: var(--text-secondary);
+}
+
+.reservation-form {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--bbq-orange);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    transition: border-color 0.3s ease;
+}
+
+.form-group select option {
+    background-color: var(--charcoal-black);
+    color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--smoky-red);
+    background: rgba(128, 128, 128, 0.08);
+    /* Making it neutral for both modes */
+}
+
+.time-selects {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.5rem;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+/* Success State */
+.reservation-success {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.success-content {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 4rem;
+    border-radius: 12px;
+    border: 1px solid var(--bbq-orange);
+    max-width: 600px;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #2ecc71;
+    margin-bottom: 2rem;
+}
+
+.success-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.success-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.success-content button {
+    margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+
+    .reservation-form {
+        padding: 2rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

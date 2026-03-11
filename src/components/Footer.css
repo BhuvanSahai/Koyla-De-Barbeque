@@ -1,0 +1,135 @@
+.footer {
+    background-color: var(--charcoal-black);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-banner {
+    background: linear-gradient(rgba(192, 57, 43, 0.9), rgba(192, 57, 43, 0.9)), url('../assets/hero_bg_1773130739110.png');
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.cta-banner h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.main-footer {
+    padding-bottom: 3rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+}
+
+.footer-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-item h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--smoky-red);
+}
+
+.footer-desc {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-item ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-item ul li a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-item ul li a:hover {
+    color: var(--bbq-orange);
+}
+
+.footer-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.social-links a:hover {
+    background-color: var(--bbq-orange);
+    color: var(--charcoal-black);
+}
+
+.map-container {
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
