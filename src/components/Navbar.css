@@ -16,8 +16,10 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-body.light-mode .navbar.scrolled {
-    --nav-text: #1B1B1B;
+@media (max-width: 992px) {
+    body.light-mode .navbar.scrolled {
+        --nav-text: #1B1B1B;
+    }
 }
 
 .nav-container {
@@ -57,11 +59,11 @@ body.light-mode .navbar.scrolled {
     color: var(--nav-text);
 }
 
-.nav-links a:hover {
+.nav-links a:not(.btn-secondary):hover {
     color: var(--bbq-orange);
 }
 
-.nav-links a::after {
+.nav-links a:not(.btn-secondary)::after {
     content: '';
     position: absolute;
     width: 0;
@@ -72,7 +74,7 @@ body.light-mode .navbar.scrolled {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:not(.btn-secondary):hover::after {
     width: 100%;
 }
 
@@ -113,6 +115,10 @@ body.light-mode .navbar.scrolled {
     background-color: transparent;
 }
 
+.mobile-menu-header {
+    display: none;
+}
+
 .hamburger.open::before {
     top: 0;
     transform: rotate(45deg);
@@ -123,9 +129,16 @@ body.light-mode .navbar.scrolled {
     transform: rotate(-45deg);
 }
 
+.mobile-toggle.open {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
 /* Advanced Theme Switch Toggle */
 .theme-switch {
-    display: inline-block;
+    display: none;
+    /* Hidden on desktop by default */
     position: relative;
     width: 80px;
     height: 40px;
@@ -375,6 +388,18 @@ input:checked~.slider-wrapper .star {
         right: 0;
     }
 
+    .mobile-menu-header {
+        display: block;
+        margin-bottom: 3rem;
+        text-align: center;
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    .mobile-menu-header .logo {
+        font-size: 2rem;
+    }
+
     .nav-links ul {
         flex-direction: column;
         align-items: center;
@@ -390,6 +415,13 @@ input:checked~.slider-wrapper .star {
         flex-direction: column;
         width: 80%;
         max-width: 300px;
+    }
+
+    .theme-switch {
+        display: inline-block;
+        /* Show only on mobile/tablet */
+        margin: 0 auto 1.5rem auto;
+        /* Center it nicely in the mobile menu */
     }
 
     .mobile-toggle {

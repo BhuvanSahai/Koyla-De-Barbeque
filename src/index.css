@@ -15,20 +15,22 @@
   --font-body: 'Inter', sans-serif;
 }
 
-body.light-mode {
-  /* Light Palette Overrides */
-  --charcoal-black: #F8F5F2;
-  /* Background becomes cream */
-  --smoky-red: #D35400;
-  /* Slightly brighter for contrast */
-  --bbq-orange: #E67E22;
-  --warm-cream: #1B1B1B;
-  /* Text becomes dark */
-  --dark-grey: #e0e0e0;
-  --text-primary: #1B1B1B;
-  --text-secondary: #555555;
-  --surface-color: rgba(0, 0, 0, 0.05);
-  --border-color: rgba(0, 0, 0, 0.1);
+@media (max-width: 992px) {
+  body.light-mode {
+    /* Light Palette Overrides - Only active on mobile/tablet */
+    --charcoal-black: #F8F5F2;
+    /* Background becomes cream */
+    --smoky-red: #D35400;
+    /* Slightly brighter for contrast */
+    --bbq-orange: #E67E22;
+    --warm-cream: #1B1B1B;
+    /* Text becomes dark */
+    --dark-grey: #e0e0e0;
+    --text-primary: #1B1B1B;
+    --text-secondary: #555555;
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --border-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
 * {

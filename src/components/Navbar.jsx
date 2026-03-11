@@ -48,7 +48,7 @@ const Navbar = () => {
                 </Link>
 
                 <button
-                    className="mobile-toggle"
+                    className={`mobile-toggle ${menuOpen ? 'open' : ''}`}
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Toggle menu"
                 >
@@ -56,6 +56,11 @@ const Navbar = () => {
                 </button>
 
                 <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+                    <div className="mobile-menu-header">
+                        <Link to="/" className="logo" onClick={(e) => handleLinkClick(e, 'home')}>
+                            Koyla <span>De Barbeque</span>
+                        </Link>
+                    </div>
                     <ul>
                         <li><Link to="/#about" onClick={(e) => handleLinkClick(e, 'about')}>About</Link></li>
                         <li><Link to="/#menu" onClick={(e) => handleLinkClick(e, 'menu')}>Menu</Link></li>
