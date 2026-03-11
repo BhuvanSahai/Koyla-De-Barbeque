@@ -64,15 +64,36 @@ const Navbar = () => {
                         <li><Link to="/#contact" onClick={(e) => handleLinkClick(e, 'contact')}>Contact</Link></li>
                     </ul>
                     <div className="nav-actions">
-                        <button className="btn-secondary theme-toggle" onClick={toggleTheme} aria-label="Toggle theme" style={{ marginRight: '1rem', padding: '8px 16px', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            {theme === 'dark' ? (
-                                <>☀️ Light Mode</>
-                            ) : (
-                                <>🌙 Dark Mode</>
-                            )}
-                        </button>
+                        <label className="theme-switch" aria-label="Toggle theme">
+                            <input
+                                type="checkbox"
+                                checked={theme === 'light'}
+                                onChange={toggleTheme}
+                            />
+                            <div className="slider-wrapper">
+                                <div className="theme-bg"></div>
+                                <div className="celestial-body">
+                                    <div className="craters">
+                                        <div className="crater crater-1"></div>
+                                        <div className="crater crater-2"></div>
+                                        <div className="crater crater-3"></div>
+                                    </div>
+                                </div>
+                                <div className="decorations">
+                                    <div className="cloud cloud-1"></div>
+                                    <div className="cloud cloud-2"></div>
+                                    <div className="cloud cloud-3"></div>
+                                    <div className="cloud cloud-4"></div>
+
+                                    <div className="star star-1">✦</div>
+                                    <div className="star star-2">✦</div>
+                                    <div className="star star-3">✦</div>
+                                    <div className="star star-4">✦</div>
+                                    <div className="star star-5">✦</div>
+                                </div>
+                            </div>
+                        </label>
                         <Link to="/#menu" className="btn-secondary" onClick={(e) => handleLinkClick(e, 'menu')}>Order Online</Link>
-                        <Link to="/reserve" className="btn-primary" onClick={() => setMenuOpen(false)}>Reserve Table</Link>
                     </div>
                 </nav>
             </div>

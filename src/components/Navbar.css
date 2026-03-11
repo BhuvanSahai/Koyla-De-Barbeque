@@ -123,6 +123,240 @@ body.light-mode .navbar.scrolled {
     transform: rotate(-45deg);
 }
 
+/* Advanced Theme Switch Toggle */
+.theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.slider-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px;
+    overflow: hidden;
+    /* Layer 1: Inner shadow for depressed look. Layer 2: White top rim highlight. Layer 3: Soft outer drop shadow to lift it */
+    box-shadow:
+        inset 0px 4px 6px rgba(0, 0, 0, 0.6),
+        inset 0px -2px 3px rgba(255, 255, 255, 0.1),
+        0px 2px 8px rgba(0, 0, 0, 0.4);
+    transition: 0.5s ease;
+}
+
+/* Background Layers */
+.theme-bg {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    /* Dark Mode (Left), Light Mode (Right) */
+    background: linear-gradient(to right, #1a2332 0%, #2b3b55 25%, #4b586e 50%, #4facfe 75%, #00f2fe 100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform: translateX(0);
+    /* Default Dark Mode */
+}
+
+input:checked~.slider-wrapper .theme-bg {
+    transform: translateX(-50%);
+    /* Slide to Light Mode */
+}
+
+/* Celestial Body (Moon default, becomes Sun) */
+.celestial-body {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    /* Moon color */
+    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 10;
+    overflow: hidden;
+}
+
+input:checked~.slider-wrapper .celestial-body {
+    transform: translateX(40px);
+    background: #ffdf00;
+    /* Sun color */
+    box-shadow:
+        inset -4px -4px 0px rgba(230, 126, 34, 0.5),
+        0 0 10px rgba(255, 223, 0, 0.8),
+        0 0 20px rgba(255, 223, 0, 0.6),
+        0 0 30px rgba(255, 223, 0, 0.4);
+}
+
+/* Craters (Visible on Moon, fade on Sun) */
+.crater {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+.crater-1 {
+    top: 6px;
+    left: 16px;
+    width: 8px;
+    height: 8px;
+}
+
+.crater-2 {
+    top: 18px;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+
+.crater-3 {
+    top: 18px;
+    left: 22px;
+    width: 4px;
+    height: 4px;
+}
+
+input:checked~.slider-wrapper .crater {
+    opacity: 0;
+}
+
+/* Decorations Map */
+.decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* Clouds (Visible in Light Mode, hidden in Dark Mode) */
+.cloud {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cloud-1 {
+    width: 25px;
+    height: 25px;
+    bottom: -8px;
+    left: 20px;
+    z-index: 5;
+}
+
+.cloud-2 {
+    width: 35px;
+    height: 35px;
+    bottom: -12px;
+    left: 35px;
+    z-index: 4;
+}
+
+.cloud-3 {
+    width: 20px;
+    height: 20px;
+    bottom: -5px;
+    right: 10px;
+    z-index: 5;
+}
+
+.cloud-4 {
+    width: 40px;
+    height: 40px;
+    bottom: -15px;
+    right: -5px;
+    z-index: 3;
+    opacity: 0.8;
+}
+
+input:checked~.slider-wrapper .cloud {
+    opacity: 0.95;
+    transform: translateY(0);
+}
+
+/* Stars (Visible in Dark Mode, hidden in Light Mode) */
+.star {
+    position: absolute;
+    color: #ffffff;
+    font-size: 8px;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.star-1 {
+    top: 8px;
+    right: 25px;
+    animation: twinkle 3s infinite;
+}
+
+.star-2 {
+    top: 18px;
+    right: 15px;
+    font-size: 5px;
+    animation: twinkle 4s infinite 1s;
+}
+
+.star-3 {
+    top: 25px;
+    right: 30px;
+    font-size: 6px;
+    animation: twinkle 2.5s infinite 0.5s;
+}
+
+.star-4 {
+    top: 10px;
+    right: 10px;
+    font-size: 4px;
+    animation: twinkle 5s infinite 2s;
+}
+
+.star-5 {
+    top: 22px;
+    right: 5px;
+    font-size: 7px;
+    animation: twinkle 3.5s infinite 1.5s;
+}
+
+input:checked~.slider-wrapper .star {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+        text-shadow: 0 0 5px white;
+    }
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .nav-links {

@@ -9,8 +9,6 @@ const Footer = () => {
                 <div className="container cta-content">
                     <h2>Ready for the Ultimate BBQ Experience?</h2>
                     <div className="cta-actions">
-                        <Link to="/reserve" className="btn-primary">Reserve a Table</Link>
-                        <a href="/#menu" className="btn-secondary">Order Online</a>
                     </div>
                 </div>
             </div>

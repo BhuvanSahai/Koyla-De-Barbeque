@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SignatureDishes.css';
 import tandooriImg from '../assets/tandoori_chicken_1773130774500.png';
+import chickenTikkaImg from '../assets/chicken_tikka.png';
 import banjaraImg from '../assets/banjara_kebab_1773130850999.png';
 import biryaniImg from '../assets/biryani_1773130868327.png';
 import lollipopImg from '../assets/chicken_lollipop_1773130884297.png';
@@ -12,7 +13,7 @@ import naanImg from '../assets/garlic_naan.png';
 const fullMenu = [
     // Starters
     { category: 'Starters', name: 'Tandoori Chicken', description: 'Tandoor cooked chicken with spices', price: 'Half ₹195 / Full ₹385', image: tandooriImg },
-    { category: 'Starters', name: 'Chicken Tikka', description: 'All time favourite delicacy', price: '₹235', image: tandooriImg },
+    { category: 'Starters', name: 'Chicken Tikka', description: 'All time favourite delicacy', price: '₹235', image: chickenTikkaImg },
     { category: 'Starters', name: 'Chicken Banjara Kebab', description: 'Tender chicken pieces with a unique herbaceous marinade.', price: '₹320', image: banjaraImg },
     { category: 'Starters', name: 'Chicken Lollipop', description: 'Crispy fried chicken wings glazed with spicy Schezwan sauce.', price: '₹240', image: lollipopImg },
     { category: 'Starters', name: 'Paneer Tikka', description: 'Cubes of cottage cheese marinated in spiced yogurt and grilled.', price: '₹220', image: paneerImg },

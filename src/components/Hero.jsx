@@ -13,7 +13,6 @@ const Hero = () => {
                 </p>
                 <div className="hero-actions">
                     <Link to="/reserve" className="btn-primary">Reserve a Table</Link>
-                    <a href="/#menu" className="btn-secondary">Order Online</a>
                 </div>
 
                 <div className="hero-quick-info">
