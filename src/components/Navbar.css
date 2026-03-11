@@ -103,6 +103,12 @@
     transition: all 0.3s ease;
 }
 
+body.light-mode .hamburger,
+body.light-mode .hamburger::before,
+body.light-mode .hamburger::after {
+    background-color: #1B1B1B;
+}
+
 .hamburger::before {
     top: -8px;
 }

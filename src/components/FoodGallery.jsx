@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FoodGallery.css';
+import ImageModal from './ImageModal';
 import heroBg from '../assets/hero_bg_1773130739110.png';
 import aboutImg from '../assets/about_bbq_1773130757705.png';
 import tandooriImg from '../assets/tandoori_chicken_1773130774500.png';
@@ -17,6 +18,14 @@ const images = [
 ];
 
 const FoodGallery = () => {
+    const [selectedImg, setSelectedImg] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openPreview = (img) => {
+        setSelectedImg(img);
+        setIsModalOpen(true);
+    };
+
     return (
         <section className="section" id="gallery">
             <div className="container">
@@ -27,7 +36,11 @@ const FoodGallery = () => {
 
                 <div className="gallery-grid">
                     {images.map((img, index) => (
-                        <div className="gallery-item" key={index}>
+                        <div
+                            className="gallery-item"
+                            key={index}
+                            onClick={() => openPreview(img)}
+                        >
                             <img src={img} alt={`Gallery ${index}`} />
                             <div className="gallery-overlay">
                                 <span>View Large</span>
@@ -36,6 +49,12 @@ const FoodGallery = () => {
                     ))}
                 </div>
             </div>
+
+            <ImageModal
+                isOpen={isModalOpen}
+                image={selectedImg}
+                onClose={() => setIsModalOpen(false)}
+            />
         </section>
     );
 };

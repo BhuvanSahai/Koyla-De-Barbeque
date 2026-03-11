@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SignatureDishes.css';
+import ImageModal from './ImageModal';
 import tandooriImg from '../assets/tandoori_chicken_1773130774500.png';
 import chickenTikkaImg from '../assets/chicken_tikka.png';
 import banjaraImg from '../assets/banjara_kebab_1773130850999.png';
@@ -35,8 +36,15 @@ const fullMenu = [
 const SignatureDishes = () => {
     const [showFullMenu, setShowFullMenu] = useState(false);
     const [activeCategory, setActiveCategory] = useState('All');
+    const [selectedImg, setSelectedImg] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const categories = ['All', 'Starters', 'Main Course', 'Breads'];
+
+    const openPreview = (img) => {
+        setSelectedImg(img);
+        setIsModalOpen(true);
+    };
 
     // Filter by category
     const filteredDishes = activeCategory === 'All'
@@ -71,7 +79,7 @@ const SignatureDishes = () => {
                 <div className="dishes-grid">
                     {displayedDishes.map((dish, index) => (
                         <div className="dish-card" key={index}>
-                            <div className="dish-image">
+                            <div className="dish-image" onClick={() => openPreview(dish.image)} style={{ cursor: 'zoom-in' }}>
                                 <img src={dish.image} alt={dish.name} />
                                 <div className="dish-price">{dish.price}</div>
                             </div>
@@ -96,6 +104,12 @@ const SignatureDishes = () => {
                     </button>
                 </div>
             </div>
+
+            <ImageModal
+                isOpen={isModalOpen}
+                image={selectedImg}
+                onClose={() => setIsModalOpen(false)}
+            />
         </section>
     );
 };
